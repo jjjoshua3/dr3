@@ -151,14 +151,28 @@ export function stripInstallParams(url) {
   return rest ? `${path}?${rest}` : path;
 }
 
-export function renderInstallPageHtml(template, { host, url } = {}) {
+/**
+ * Name shown in the install dialog and manifest.
+ * A published `*.grok.me` slug wins. Otherwise the site title, so preview and
+ * Netlify don't fall back to the generic "Grok App" label.
+ */
+export function pwaDisplayName(hostHeader, site = {}) {
+  const fromHost = appNameFromHost(hostHeader);
+  if (fromHost !== DEFAULT_APP_NAME) return fromHost;
+  const fromSite = String(site?.title ?? "").trim();
+  if (fromSite) return fromSite;
+  return DEFAULT_APP_NAME;
+}
+
+export function renderInstallPageHtml(template, { host, url, site } = {}) {
+  const resolvedSite = site ?? readOgSite();
   return String(template)
-    .replaceAll("{{APP_NAME}}", escapeHtml(appNameFromHost(host)))
+    .replaceAll("{{APP_NAME}}", escapeHtml(pwaDisplayName(host, resolvedSite)))
     .replaceAll("{{APP_URL}}", escapeHtml(stripInstallParams(url)));
 }
 
-export function renderWebManifest(hostHeader) {
-  const name = appNameFromHost(hostHeader);
+export function renderWebManifest(hostHeader, site) {
+  const name = pwaDisplayName(hostHeader, site ?? readOgSite());
   return JSON.stringify(
     {
       name,
