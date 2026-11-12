@@ -20,7 +20,7 @@
   }
 
   html {
-    scroll-behavior: smooth;
+    scroll-behavior: auto;
   }
 
   html,
@@ -207,6 +207,19 @@
   z-index: 2;
 }
 
+.dr-h1-role {
+  display: block;
+  margin-top: 0.85rem;
+  max-width: 28rem;
+  font-family: var(--font-sans);
+  font-style: normal;
+  font-weight: 400;
+  font-size: 0.98rem;
+  line-height: 1.45;
+  letter-spacing: 0.01em;
+  color: var(--color-mist);
+}
+
 .dr-hero-visual {
   display: grid;
   gap: 0.6rem;
@@ -339,8 +352,13 @@
   height: 3.4rem;
   border-radius: 50%;
   position: relative;
-  background:
-    radial-gradient(circle at 35% 30%, #fff4cc, var(--color-gold) 28%, #a86b00 70%, #5c3a04);
+  background: radial-gradient(
+    circle at 35% 30%,
+    #fff4cc,
+    var(--color-gold) 28%,
+    #a86b00 70%,
+    #5c3a04
+  );
   border: 1px solid #f0d48a;
   box-shadow:
     inset 0 -6px 8px rgba(0, 0, 0, 0.35),
@@ -433,7 +451,8 @@
 }
 
 .dr-lead h2 em,
-.dr-pad h2 em {
+.dr-pad h2 em,
+.dr-desk h2 em {
   font-style: italic;
   color: var(--color-gold);
 }
@@ -677,7 +696,9 @@
   border: 1px solid color-mix(in srgb, var(--color-brass) 18%, transparent);
   background: color-mix(in srgb, var(--color-slate) 88%, transparent);
   padding: 1.25rem;
-  transition: border-color 0.2s ease, background 0.2s ease;
+  transition:
+    border-color 0.2s ease,
+    background 0.2s ease;
 }
 
 .dr-hub-col:hover {
@@ -739,8 +760,16 @@
 }
 
 .dr-desk h2 {
-  max-width: 22ch;
-  margin-bottom: 1.5rem;
+  max-width: 16ch;
+  margin-bottom: 0;
+}
+
+.dr-desk-lead {
+  margin: 0.85rem 0 1.5rem;
+  max-width: 36rem;
+  color: var(--color-mist);
+  font-weight: 300;
+  line-height: 1.5;
 }
 
 .dr-desk-grid {
@@ -1002,7 +1031,9 @@
   margin-left: -4.5rem;
   width: min(240px, 70vw);
   color: var(--color-gold);
-  transition: opacity 0.5s ease, transform 0.6s ease;
+  transition:
+    opacity 0.5s ease,
+    transform 0.6s ease;
 }
 
 .dr-pre.is-morph .dr-pre-sax,

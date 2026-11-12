@@ -2,6 +2,7 @@ export type Film = {
   id: string;
   title: string;
   meta: string;
+  alt: string;
   vertical?: boolean;
   href?: string;
   hrefLabel?: string;
@@ -12,6 +13,9 @@ export type NoteCard = {
   meta: string;
   body: string;
   image: string;
+  alt: string;
+  width: number;
+  height: number;
 };
 
 export type Spotlight = {
@@ -63,9 +67,24 @@ export const spotlights: Spotlight[] = [
     title: "De grote solo's met Excelsior",
     dek: "De zaal even stil. Drie opnames waarin de solo de avond draagt.",
     films: [
-      { id: "kKDFos-CEd8", title: "Baker Street", meta: "Live" },
-      { id: "WLPDBI1BV6g", title: "Against All Odds", meta: "Live" },
-      { id: "22HLcpeJl3k", title: "Crooner's Serenade", meta: "9 jaar geleden" },
+      {
+        id: "kKDFos-CEd8",
+        title: "Baker Street",
+        meta: "Live",
+        alt: "Daan Roosenbrand speelt saxofoonsolo in Baker Street live met Excelsior Papendrecht",
+      },
+      {
+        id: "WLPDBI1BV6g",
+        title: "Against All Odds",
+        meta: "Live",
+        alt: "Daan Roosenbrand speelt Against All Odds live op saxofoon",
+      },
+      {
+        id: "22HLcpeJl3k",
+        title: "Crooner's Serenade",
+        meta: "Uit het Archief • 2015",
+        alt: "Daan Roosenbrand speelt Crooner's Serenade, uit het archief van 2015",
+      },
     ],
   },
   {
@@ -78,11 +97,13 @@ export const spotlights: Spotlight[] = [
         id: "WjrbjayKkLQ",
         title: "It's A Man's World",
         meta: "Nick Nicolai · Ranking The Talent",
+        alt: "Daan Roosenbrand speelt It's A Man's World bij Ranking The Talent met Nick Nicolai",
       },
       {
         id: "Mf3JzKaa7D8",
         title: "Live in Rotterdam Ahoy",
         meta: "Bracchus · Eurekaweek 2019",
+        alt: "Daan Roosenbrand live in Rotterdam Ahoy tijdens Eurekaweek 2019 met Bracchus",
       },
     ],
   },
@@ -96,6 +117,7 @@ export const spotlights: Spotlight[] = [
         id: "JUqgIJMsIZc",
         title: "Night at the Jukebox",
         meta: "Short",
+        alt: "Night at the Jukebox, short met saxofonist Daan Roosenbrand",
         vertical: true,
         href: "https://www.nightatthejukebox.nl/",
         hrefLabel: "nightatthejukebox.nl",
@@ -107,18 +129,27 @@ export const spotlights: Spotlight[] = [
         meta: "Roosendaal · nu",
         body: "Zijn huidige coverband. Energiek, breed repertoire, sax vooraan.",
         image: "/photos/guitar.jpg",
+        alt: "Daan Roosenbrand met coverband IMPAKT in Roosendaal",
+        width: 1356,
+        height: 1370,
       },
       {
         title: "Sax & DJ",
         meta: "Live sets",
         body: "Samenwerkingen waarin de sax dwars door de beat snijdt.",
         image: "/photos/close.jpg",
+        alt: "Close-up van Daan Roosenbrand tijdens een Sax & DJ-set",
+        width: 1110,
+        height: 1110,
       },
       {
         title: "Dave Warmerdam Band",
         meta: "Gewaardeerd lid",
         body: "Jarenlang deel van de band. Strak, warm, op het podium thuis.",
         image: "/photos/stage.jpg",
+        alt: "Daan Roosenbrand op het podium met saxofoon bij de Dave Warmerdam Band",
+        width: 1066,
+        height: 1066,
       },
     ],
   },
@@ -128,9 +159,24 @@ export const spotlights: Spotlight[] = [
     title: "Pop Orchestra & intiem",
     dek: "Codarts Pop Orchestra, en de stillere kant van het vak.",
     films: [
-      { id: "rpkXoRAOxDU", title: "Licht en Donker", meta: "Froukje" },
-      { id: "gVm_NMxlTmU", title: "Hold Back", meta: "Margi Sinniah" },
-      { id: "bGFwhE3EVrA", title: "Have Yourself A Merry Little Christmas", meta: "Intiem" },
+      {
+        id: "rpkXoRAOxDU",
+        title: "Licht en Donker",
+        meta: "Froukje",
+        alt: "Codarts Pop Orchestra speelt Licht en Donker van Froukje met Daan Roosenbrand",
+      },
+      {
+        id: "gVm_NMxlTmU",
+        title: "Hold Back",
+        meta: "Margi Sinniah",
+        alt: "Hold Back van Margi Sinniah met saxofonist Daan Roosenbrand",
+      },
+      {
+        id: "bGFwhE3EVrA",
+        title: "Have Yourself A Merry Little Christmas",
+        meta: "Intiem",
+        alt: "Daan Roosenbrand speelt Have Yourself A Merry Little Christmas, intieme saxofoon",
+      },
     ],
   },
 ];

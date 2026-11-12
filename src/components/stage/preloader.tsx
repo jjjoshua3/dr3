@@ -69,7 +69,7 @@ export function Preloader({ onDone }: Props) {
         </p>
         <p className="dr-pre-name">Daan Roosenbrand</p>
       </div>
-      <button type="button" className="dr-skip" onClick={skip}>
+      <button type="button" className="dr-skip" onClick={skip} aria-label="Sla de intro over">
         Sla over
       </button>
     </div>

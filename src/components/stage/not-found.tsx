@@ -17,7 +17,7 @@ export function NotFoundPage() {
           Terug naar Daan
         </a>
         <footer className="dr-foot">
-          <span>Daan Roosenbrand</span>
+          <span>© {new Date().getFullYear()} Daan Roosenbrand</span>
           <span>Saxofoon · Klarinet · Directie · Les</span>
           <span className="dr-credit">
             Ontworpen door{" "}
